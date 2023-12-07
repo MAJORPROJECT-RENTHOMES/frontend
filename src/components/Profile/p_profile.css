@@ -1,0 +1,560 @@
+
+body{
+  height: 100vh;
+  width: 100vw;
+}
+.profileContainer{
+  min-height: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 90vh;
+  position: relative;
+}
+.inps {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+#profileCardContainer{
+  display: flex;
+  height: 80vh;
+  width: 100%;
+  perspective: 100vw;
+  background-color: transparent;
+}
+#profileCard{
+  /* height: 35rem;
+  width: 35rem;
+  margin: auto;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s; */
+  /* ***** */
+  height: 90%;
+  width: 40%;
+  min-width: 15rem;
+  min-height: 30rem;
+  margin: auto;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+.profileFront,.profileBack{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+.profileFront{
+  backdrop-filter: blur(10px);
+  transform: rotateY(0deg);
+}
+.profileBack{
+  backdrop-filter: blur(10px);
+  transform: rotateY(180deg);
+}
+.profileBox{
+  border: 1px solid black;
+  border-radius: 3rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  backdrop-filter: blur(8px);
+}
+.customInp {
+  width: 85%;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  margin-top: 5%;
+}
+.profileHeading{
+  font-size: 18px;
+  font-weight: bold;
+}
+.profileInfo{
+  margin-top: .5rem;
+  font-size: 15px;
+  color: rgb(69, 69, 69);
+}
+.profilePic{
+  height: 20vh;
+  width: 20vh;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profilePic img{
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#p_editBtn,#p_submitEdit{
+  border: 1px solid black;
+  border-radius: 2rem;
+  background-color: black;
+  color: white;
+  height: 2.5rem;
+  width: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  transition: .2sec;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+/* #p_submitEdit{
+} */
+#p_editBtn:hover,#p_submitEdit:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.p_myForm{
+  height: 80%;
+  width: 75%;
+  overflow-y: scroll;
+}
+.p_myForm::-webkit-scrollbar{
+  display: none;
+}
+.customLabel{
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+}
+.customEditInp{
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  margin-top: 0.6rem;
+  margin-bottom: 1rem;
+  font-size: 15px;
+}
+.editDetails{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 3rem;
+}
+#p_userimg{
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+}
+.leftMenuContainer{
+  height: 90%;
+  width: 20%;
+  min-width: 10rem;
+  border: 1px solid black;
+  border-radius: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: -2;
+  visibility: hidden;
+}
+.leftMenu{
+  justify-content: center;
+  height: 90%;
+  width: 85%;
+  /* border: 1px solid black; */
+  border-radius: 3rem;
+}
+.leftPicContainer{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.leftMenuOptions{
+  margin-top: 1rem;
+  height: 2.5rem;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  transition: .2s;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.leftMenuOptions:hover{
+  transform: scale(1.1);
+  
+}
+.profileOptions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
+  /* border: 1px solid black; */
+}
+.leftMenuOptions:hover{
+  cursor: pointer;
+}
+.contriBoxContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 80%;
+}
+.contriBox{
+  padding: .5rem;
+  height: 90%;
+  width: 90%;
+  /* border: 1px solid black; */
+  display: grid;
+  row-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); /* Adjust the column width as needed */
+  overflow-y: scroll;
+  align-items: center;
+  justify-items: center;
+}
+.contriBox::-webkit-scrollbar{
+  visibility: hidden;
+}
+.contriCard{
+  backdrop-filter: blur(10px);
+  height: 20rem;
+  width: 15rem;
+  border: 3px solid black;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s;
+  text-decoration: none;
+}
+.contriCard:hover{
+  transform: scale(1.1);
+}
+.contriCardMain{
+  height: 90%;
+  width: 90%;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cardImage{
+  width: 100%;
+  height: 48%;
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cardImage img{
+  height: 100%;
+  width: 100%;
+  border-radius: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HeadingHouseProperties{
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: .6rem;
+  margin-top: .2rem;
+}
+.houseProperties{
+  width: 100%;
+  height: 47%;
+  /* border: 1px solid black; */
+  color: black;
+}
+.card_details{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .15rem;
+}
+.cardHousePropertiesLabel{
+  width: 30%;
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 6rem;
+}
+.cardHousePropertiesValue{
+  width: 65%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+}
+.editDeleteBtns{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.card_editBtn,.card_deleteBtn{
+  color: white;
+  background-color: black;
+  border-radius: 1.5rem;
+  height: 2rem;
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s;
+}
+.card_editBtn:hover,.card_deleteBtn:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.reactRouterLinks{
+  text-decoration: none;
+}
+.propertyDetailsPageContainer{
+  height: 100%;
+  width: 80%;
+  /* border: 1px solid black; */
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.propertyDetailsPage{
+  backdrop-filter: blur(10px);
+  position: absolute;
+  min-width: 18rem;
+  width: 40%;
+  height: 90%;
+  border: 3px solid black;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  visibility: visible;
+}
+.propertyDetailImage{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 4rem;
+  margin-top: 1rem;
+}
+.propertyDetailImage img{
+  height: 100%;
+  width: 70%;
+  border-radius: 1rem ;
+}
+.propertyDetailsDetails{
+  overflow-y: scroll;
+  height: 45%;
+  width: 90%;
+  /* border: 1px solid black; */
+  margin: auto;
+}
+.propertyDetailsDetails::-webkit-scrollbar{
+  visibility: hidden;
+}
+.editPropertyBtn,.deletePropertyBtn{
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  height: 1.5rem;
+  width: 4rem;
+  font-size: 14px;
+  color: white;
+  background-color: black;
+  border-radius: 1rem;
+  transition: .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.deletePropertyBtn{
+  top: 3.5rem;
+}
+.editPropertyBtn:hover,.deletePropertyBtn:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.editFormAndDetail{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.editPropertyForm{
+  position: absolute;
+  z-index: -1;
+  visibility: hidden;
+  height: 92%;
+  width: 70%;
+  border: 3px solid black;
+  border-radius: 2rem;
+  /* background-color: aqua; */
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* visibility: hidden; */
+}
+.editPropertyLeft,.editPropertyRight{
+  height: 80%;
+  /* border: 1px solid black; */
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.editPropertyLeft{
+  width: 40%;
+}
+.editPropertyRight{
+  width: 50%;
+}
+.editedPropertyImage{
+  width: 90%;
+  height: 45%;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.editedPropertyImage img{
+  height: 85%;
+  width: 100%;;
+  border-radius: 1rem;
+}
+.editPropertyLeftHeaders{
+  width: 90%;
+}
+.customPropertyEditInp{
+  width: 98%;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 15px;
+  border-radius: .5rem;
+  padding: .3rem;
+}
+.customPropertyEditInpTextArea{
+  margin-top: .2rem;
+  width: 94%;
+  height: 5rem;
+  padding: 3%;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: .5rem;
+  resize: none;
+}
+.requiredFields::after {
+  content: " *";
+  color: red;
+}
+.editBtnContainer{
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+}
+.editSubmitBtn{
+  width: 5rem;
+  height: 2rem;
+  color: white;
+  background-color: black;
+  border-radius: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: .2s;
+  margin-left: 1.5rem;
+}
+.editSubmitBtn:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.radioOptionsPropertyEdit{
+  margin-right: 1rem;
+}
+.addNewPropertyCard{
+  height: 90%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-decoration: none;
+  color: black;
+}
+.addNewPropertyCard img{
+  height: 70%;
+  width: auto;
+}
+.addNewPropertyText{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* ************************************************************************************************************************** */
+.p_header{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  background-color: black;
+  height: 10vh;
+  width: 100vw;
+}
+.p_options{
+  margin-left: 2rem;
+  font-size: 15px;
+  font-weight: bold;
+  height: 1.8rem;
+  width: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  transition: .2s;
+}
+.p_options:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.p_options:hover + .leftMenuContainer{
+  visibility: visible;
+  z-index: 2;
+}

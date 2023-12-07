@@ -1,0 +1,130 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.v-addHouse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: white; */
+  padding: 1rem;
+  height: 80vh;
+  /* background: url("pexels-david-mcbee-1546168.jpg"); */
+}
+
+.v-card-container {
+  perspective: 20rem;
+  height: 100%;
+}
+
+.v-card {
+  width: 65vw; /* Make the card width 100% */
+  /* max-width: 30rem; Set a maximum width for the card */
+  height: 100%;
+  /* min-height: 43rem; */
+  /* padding: 2rem; */
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.flipped .v-card {
+  transform: rotateY(180deg);
+}
+
+.v-front,
+.v-back {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2rem 5rem;
+  box-sizing: border-box;
+}
+
+.v-front {
+  border-radius: 1rem;
+}
+.v-front form{
+  overflow-y: scroll;
+}
+.v-front form::-webkit-scrollbar{
+  visibility: hidden;
+}
+
+.v-front h2 {
+  padding: 0px;
+}
+
+#houseImg {
+  /* height: 30rem;
+  width: 100%; Make the image width 100% */
+  height: 70%;
+  width: 70%;
+  /* object-fit: cover; */
+}
+
+.v-back {
+  background-color: #4aaf4d;
+  color: white;
+  border-radius: 1rem;
+  transform: rotateY(180deg);
+}
+
+.v-back p {
+  font-size: larger;
+  align-items: center;
+}
+
+.v-front button,
+.v-back button {
+  margin-top: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: #78aeda;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-items: center;
+  width: 100%;
+}
+
+.v-card button:hover {
+  background-color: #844caf;
+}
+
+.v-front label::after {
+  content: " *";
+  color: red;
+}
+.v-front label {
+  font-weight: bold;
+}
+
+.v-front input,
+.v-front select,
+.v-front textarea {
+  margin-bottom: 0.5rem;
+  width: 100%;
+  padding: 0.3rem 0.4rem;
+  margin: 0.4rem 0;
+  border: 0.08rem solid #ddd;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+}
+
+.v-front textarea {
+  margin-bottom: 0.5rem;
+  height: 5rem;
+  resize: none;
+}
+
+/* Media Query for responsiveness */

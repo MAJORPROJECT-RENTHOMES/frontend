@@ -1,0 +1,66 @@
+/* Comments */
+
+.comments-cont {
+    border-top: 2px solid black;
+    padding: 1rem 0;
+    /* text-align: center; */
+  }
+  
+  #textarea {
+    padding: .5rem;
+    height: 5rem;
+    width: 98%;
+    resize: none;
+  }
+
+  .textarea-form div {
+    text-align: end;
+  }
+  
+  .textarea-btn {
+    color: white;
+    padding: .5rem;
+    border: none;
+    border-radius: 10px;
+    background-color: purple;
+  }
+
+  /* CommentCard */
+
+  .commentcard-body {
+    width: 100%;
+  }
+
+  .commentcard-cont {
+      /* border: 1px solid black; */
+      background-color: rgba(248, 235, 212, 0.812);
+      border-radius: .5rem;
+      /* width: 100%; */
+      padding: .5rem 1rem ;
+      margin: 1rem 0;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.185);
+    }
+    
+    .commentcard-cont1 {
+      display: flex;
+      align-items: center;
+    /* height: 3rem; */
+    font-size: small;
+    color: gray;
+}
+
+.commentcard-span {
+      margin-left: .5rem;
+  }
+
+  .commentcard-cont img {
+    width: 2rem;
+    
+    /* height: 2rem; */
+
+    border-radius: 50px;
+  }
+
+  .commentcard-cont2 {
+  margin-left: 2.5rem;
+}

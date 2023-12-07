@@ -1,0 +1,15 @@
+.similar-body {
+    display: flex;
+    flex-direction: row;
+    height: 25rem;
+    overflow-x: scroll;
+    border-top: 2px solid black;
+}
+
+.similar-body::-webkit-scrollbar{
+    visibility: hidden;
+}
+
+.similar-body .card {
+    transform: none;
+}
